@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+
+  <Flightplan>
+    <Header>
+      <FlightplanType>VFR</FlightplanType>
+      <Comment>Ver. 1.0 -- 2023-04-05T15:50:39-05:00 -- 2 waypoints -- ChatGPT 3.5 -- VFR London Paris 5000</Comment>
+      <CruisingAlt>5000</CruisingAlt>
+      <CreationDate>2023-04-05T15:50:39-05:00</CreationDate>
+      <FileVersion>1.1</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>2.8.9</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmpln.html</Documentation>
+    </Header>
+    <SimData>MSFS</SimData>
+    <NavData>MSFS</NavData>
+    <AircraftPerformance>
+      <Type>C172</Type>
+      <Name>Example Performance Profile</Name>
+    </AircraftPerformance>
+    <Waypoints>
+      <Waypoint>
+        <Name>London Heathrow Airport</Name>
+        <Ident>EGLL</Ident>
+        <Type>AIRPORT</Type>
+        <Pos Lon="-0.461941" Lat="51.469603" Alt="83.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Le Bourget Airport</Name>
+        <Ident>LFPB</Ident>
+        <Type>AIRPORT</Type>
+        <Pos Lon="2.440167" Lat="48.964401" Alt="64.00"/>
+      </Waypoint>
+    </Waypoints>
+  </Flightplan>
+</LittleNavmap>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+
+  <Flightplan>
+    <Header>
+      <FlightplanType>VFR</FlightplanType>
+      <Comment>LNM_ChatGPT_FlightPlanGenerator 1.0 -- 2023-04-05T16:42:08-05:00 -- 7 waypoints -- ChatGPT version: GPT-3.5 -- Rules: NORMAL, SCENIC -- User Input: TORONTO TO MONTREAL SCENIC</Comment>
+      <CruisingAlt>5000</CruisingAlt>
+      <CreationDate>2023-04-05T16:42:08-05:00</CreationDate>
+      <FileVersion>1.1</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>2.8.9</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmpln.html</Documentation>
+    </Header>
+    <SimData>MSFS</SimData>
+    <NavData>MSFS</NavData>
+    <Waypoints>
+      <Waypoint>
+        <Name>Toronto City Centre Airport</Name>
+        <Ident>CYTZ</Ident>
+        <Type>AIRPORT</Type>
+        <Pos Lon="-79.396096" Lat="43.628101" Alt="570.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>SCN-Lovely view of Lake Ontario</Name>
+        <Ident>USER1</Ident>
+        <Type>USER</Type>
+        <Pos Lon="-78.950579" Lat="43.838490" Alt="5000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Oshawa Executive Airport</Name>
+        <Ident>CYOO</Ident>
+        <Type>AIRPORT</Type>
+        <Pos Lon="-78.896103" Lat="43.922657" Alt="450.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>SCN-Scenic view of Ganaraska Forest</Name>
+        <Ident>USER2</Ident>
+        <Type>USER</Type>
+        <Pos Lon="-78.214327" Lat="44.020039" Alt="5000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Peterborough Airport</Name>
+        <Ident>CYPQ</Ident>
+        <Type>AIRPORT</Type>
+        <Pos Lon="-78.363548" Lat="44.225151" Alt="600.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>SCN-Historical site of Fort Lennox</Name>
+        <Ident>USER3</Ident>
+        <Type>USER</Type>
+        <Pos Lon="-73.063019" Lat="45.073334" Alt="5000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Montréal-Pierre Elliott Trudeau International Airport</Name>
+        <Ident>CYUL</Ident>
+        <Type>AIRPORT</Type>
+        <Pos Lon="-73.749901" Lat="45.470556" Alt="118.00"/>
+      </Waypoint>
+    </Waypoints>
+  </Flightplan>
+</LittleNavmap
