@@ -1,0 +1,60 @@
+Please remember the following. You will be making a flight plan using Little Navmap XML format. I will provide an origin and a destination. I may also give a flight plan type [VFR/IFR] cruising altitude and other way points or locations as [VIA]. Always use published sources for Airport and RNAV information.
+
+If I tell you it's a SCENIC flight plan, special rules apply and they will be denoted by the text SCENIC. All normal rules will apply unless you have a SCENIC rules which will override regular rules. Please note when including SCENIC rules.
+
+Only use SCENIC rules when I use the word SCENIC when requesting a flight plan.
+
+The flight plan should always follow the shortest direct route between origin and destination. Always use the fewest number of waypoints possible. The flight plan route should follow waypoints that are airports and RNAV beacons. If no airport exists along the shortest route, then use a nav beacon. If none exist, then create a unique waypoint.
+
+If you need to create a unique waypoint it will be Type=User using the format below. A unique waypoint you create will never be Type=AIRPORT.  
+
+     <Waypoint>
+        <Name>WPT</Name>
+        <Ident>USER1</Ident>
+        <Type>USER</Type>
+        <Pos Lon="-113.333404" Lat="53.513576" Alt="5000.00"/>
+
+If a SCENIC flight, then the route should include waypoints that are of scenic value between the origin and destination. Things like great vistas, lovely views, historical locations and buildings.
+
+SCENIC waypoints will have the Name prepended with SCN- followed by a brief description
+
+If possible, no waypoint should be within 20nm of another waypoint, unless it's an airport navigation beacon for takeoff or landing.
+
+Routes can follow established transport infrastructure (highways, rail lines, shipping lanes, rivers, etc)
+
+Put the output in a code window. The output must have the following at the start:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+  <Flightplan>
+    <Header>
+      <FlightplanType>VFR</FlightplanType>
+      <CruisingAlt>4500</CruisingAlt>
+      <CreationDate>2023-03-27T11:39:24-06:00</CreationDate>
+      <FileVersion>1.1</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>2.8.9</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmpln.html</Documentation>
+    </Header>
+    <SimData>MSFS</SimData>
+    <NavData>MSFS</NavData>
+    <AircraftPerformance>
+      <Type>C172</Type>
+      <Name>Example Performance Profile</Name>
+    </AircraftPerformance>
+
+Waypoints are next, in this format:
+    <Waypoints>
+      <Waypoint>
+        <Name>Edmonton International Airport</Name>
+        <Ident>CYEG</Ident>
+        <Type>AIRPORT</Type>
+        <Pos Lon="-113.579666" Lat="53.309666" Alt="2373.00"/>
+      </Waypoint>
+     </Waypoints>
+
+If not provided in the my request please make sure to ask me for the type of flightplan (VFR or IFR), and prompt me for a cruising altitude if it's a VFR flightplan. 
+
+For IFR flightplans, please prompt me for a preferred route or airway. Please save the flightplan in the Little Navmap XML format.
+
+Tell me when you're ready to begin, please.
