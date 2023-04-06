@@ -1,11 +1,43 @@
-Please remember the following. You will be making a flight plan using Little Navmap XML format. I will provide an origin and a destination. I may also give a flight plan type [VFR/IFR] cruising altitude and other way points or locations as [VIA]. Always use published sources for Airport and RNAV information.
+Please remember the following. You will be making a flight plan using Little Navmap XML format. You will NOT be creating a Python program.
 
-If I tell you it's a SCENIC flight plan, special rules apply and they will be denoted by the text SCENIC. All normal rules will apply unless you have a SCENIC rules which will override regular rules. Please note when including SCENIC rules.
+If any line after this one begins with ## then ignore the rest of that line.
 
-Only use SCENIC rules when I use the word SCENIC when requesting a flight plan.
+## My name is Bob, please address me as Bob.
 
-The flight plan should always follow the shortest direct route between origin and destination. Always use the fewest number of waypoints possible. The flight plan route should follow waypoints that are airports and RNAV beacons. If no airport exists along the shortest route, then use a nav beacon. If none exist, then create a unique waypoint.
+I will provide an origin and a destination. I may also give a flight plan type [VFR/IFR] cruising altitude and other way points or locations as [VIA]. Always use published sources for Airport and RNAV information.
 
+Initial assumptions:
+Cruising altitude = 5000
+Flight plan type = VFR
+Rules = NORMAL
+
+Tell me when you're ready to begin, please, and save the information I give you into a variable called USERINPUT. Convert USERINPUT to uppercase.
+
+Flight plan creation:
+Create the flight plan using the NORMAL rules, and additional rules only if specified in the request. 
+
+NORMAL flight rules:
+- The flight plan route should follow waypoints that are airports and RNAV beacons. 
+- If no airport exists along the shortest route, then use a nav beacon. 
+- If none exist, then create a unique waypoint. See the waypoint creation rules below.
+- Routes can follow established transport infrastructure (highways, rail lines, shipping lanes, rivers, etc)
+- Routes should use an altitude to avoid obstacles and terrain features (mountains, etc). Prompt me if an altitude issue occurs.
+- If the route is over 500km, ask me if I want to plot a Great Circle route. If yes, then your output route should follow a great circle route plan.
+- Do not use <Route> and <Leg> xml tags.
+
+
+Use these SCENIC rules only if USERINPUT contains SCENIC:
+- NORMAL and SCENIC rules apply
+- Please tell me when including SCENIC rules.
+- If a SCENIC flight plan, then the route should include additional waypoints that are of scenic value between the origin and destination. Things like great vistas, lovely views, historical locations, landmarks, and buildings.
+- SCENIC waypoints will have the Name prepended with SCN- followed by a brief description
+
+Use these DIRECT rules only if USERINPUT contains DIRECT:
+- The flight plan should always follow the shortest direct route between origin and destination. 
+- Always use the fewest number of waypoints possible. 
+- If I tell you VERY DIRECT, then just plot a route with the Origin and Destination, no waypoints in between.
+
+Waypoint creation:
 If you need to create a unique waypoint it will be Type=User using the format below. A unique waypoint you create will never be Type=AIRPORT.  
 
      <Waypoint>
@@ -14,21 +46,30 @@ If you need to create a unique waypoint it will be Type=User using the format be
         <Type>USER</Type>
         <Pos Lon="-113.333404" Lat="53.513576" Alt="5000.00"/>
 
-If a SCENIC flight, then the route should include waypoints that are of scenic value between the origin and destination. Things like great vistas, lovely views, historical locations and buildings.
-
-SCENIC waypoints will have the Name prepended with SCN- followed by a brief description
-
 If possible, no waypoint should be within 20nm of another waypoint, unless it's an airport navigation beacon for takeoff or landing.
 
-Routes can follow established transport infrastructure (highways, rail lines, shipping lanes, rivers, etc)
+Output file creation:
+Do not use <Route> and <Leg> xml tags.
+These variables will be included in the COMMENT element at the location indicated in the format below. 
+VERSION = 1.0
+CREATION DATE = Today's date and time 
+WAYPOINTS = number of waypoints in the flightplan
+FLIGHTRULES = the rules you're using to generate this flight plan
+CHATGPT_VERSION = the version of ChatGPT that is parsing these instructions
+
+Use the following format to create the COMMENT variable
+LNM_ChatGPT_FlightPlanGenerator VERSION -- CREATION DATE -- WAYPOINTS waypoints -- CHATGPT_VERSION -- Rules: FLIGHTRULES -- User Input: USERINPUT
 
 Put the output in a code window. The output must have the following at the start:
 
 <?xml version="1.0" encoding="UTF-8"?>
 <LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+
   <Flightplan>
     <Header>
       <FlightplanType>VFR</FlightplanType>
+      <Comment>COMMENT</Comment>
+      <Comment>PROMPT</comment>
       <CruisingAlt>4500</CruisingAlt>
       <CreationDate>2023-03-27T11:39:24-06:00</CreationDate>
       <FileVersion>1.1</FileVersion>
@@ -38,10 +79,6 @@ Put the output in a code window. The output must have the following at the start
     </Header>
     <SimData>MSFS</SimData>
     <NavData>MSFS</NavData>
-    <AircraftPerformance>
-      <Type>C172</Type>
-      <Name>Example Performance Profile</Name>
-    </AircraftPerformance>
 
 Waypoints are next, in this format:
     <Waypoints>
@@ -53,8 +90,7 @@ Waypoints are next, in this format:
       </Waypoint>
      </Waypoints>
 
-If not provided in the my request please make sure to ask me for the type of flightplan (VFR or IFR), and prompt me for a cruising altitude if it's a VFR flightplan. 
+If not provided in the my request assume the type of flightplan is VFR and the cruising altitude is 5000
 
 For IFR flightplans, please prompt me for a preferred route or airway. Please save the flightplan in the Little Navmap XML format.
 
-Tell me when you're ready to begin, please.
