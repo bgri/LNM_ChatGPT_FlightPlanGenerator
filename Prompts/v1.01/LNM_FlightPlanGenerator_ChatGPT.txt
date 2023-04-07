@@ -56,7 +56,7 @@ If possible, no waypoint should be within 20nm of another waypoint, unless it's 
 Output file creation:
 Do not use <Route> and <Leg> xml tags.
 These variables will be included in the COMMENT element at the location indicated in the format below. 
-VERSION = 1.02
+VERSION = 1.01
 CREATION DATE = Today's date and time 
 WAYPOINTS = number of waypoints in the flightplan
 FLIGHTRULES = the rules you're using to generate this flight plan
