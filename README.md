@@ -26,6 +26,7 @@ When ChatGPT says it's ready, enter your idea of a flight plan. I've had success
 - ``` Toronto Montreal ```
 - ``` Edmonton to Victoria SCENIC ```
 - ``` Ottawa Winnepeg VERY DIRECT ```
+- ``` vfr scenic around Maui ```
 
 You may be asked for additional information. Or not. It's kinda random.
 
@@ -43,7 +44,8 @@ There are three keywords it watches for:
 - I mostly fly VFR so really can't say if this is working well or not. I've not tested it with airway routes etc. I've written stuff in there, but who knows if it's legit or not :)
 
 ## Limitations
-- in the free version of Chat_GPT, if there's more than about seven waypoints it'll just stop. It looks like that's a limitation of the output window? 
+- in the free version of Chat_GPT, if there's more than about seven waypoints it'll just stop. It looks like that's a limitation of the output window?
+-   I've added a rule to limit the number of SCENIC waypoints. This seems to help but doesn't always get applied. 
 
 ## Disclaimer
 NOT TO BE USED FOR GENERATION OF REAL WORLD FLIGHT PLANS. Kinda goes without saying, but sometimes ya just gotta say.
