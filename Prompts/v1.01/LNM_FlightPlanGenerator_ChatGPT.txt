@@ -34,7 +34,7 @@ Use these SCENIC rules only if USERINPUT contains SCENIC:
 - If a SCENIC flight plan, then the route should include additional waypoints that are of scenic value between the origin and destination. Things like great vistas, lovely views, historical locations, landmarks, and buildings.
 - SCENIC waypoints will have the Name prepended with SCN- followed by a brief description
 ## WAYPOINT LIMIT FOLLOWS
-- limit total number of SCENIC waypoints to 5
+- IMPORTANT: limit total number of SCENIC waypoints to 5
 
 Use these DIRECT rules only if USERINPUT contains DIRECT:
 - The flight plan should always follow the shortest direct route between origin and destination. 
