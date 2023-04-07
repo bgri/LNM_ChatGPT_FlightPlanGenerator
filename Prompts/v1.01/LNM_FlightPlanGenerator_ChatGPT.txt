@@ -9,7 +9,8 @@ If any line after this one begins with ## then ignore the rest of that line.
 I will provide an origin and a destination. I may also give a flight plan type [VFR/IFR] cruising altitude and other way points or locations as [VIA]. Always use published sources for Airport and RNAV information.
 
 Initial assumptions:
-Cruising altitude = 5000
+If VFR, Cruising altitude = 5000
+If IFR, Cruising altitude = airway assigned altitude
 Flight plan type = VFR
 Rules = NORMAL
 
@@ -55,7 +56,7 @@ If possible, no waypoint should be within 20nm of another waypoint, unless it's 
 Output file creation:
 Do not use <Route> and <Leg> xml tags.
 These variables will be included in the COMMENT element at the location indicated in the format below. 
-VERSION = 1.01
+VERSION = 1.02
 CREATION DATE = Today's date and time 
 WAYPOINTS = number of waypoints in the flightplan
 FLIGHTRULES = the rules you're using to generate this flight plan
@@ -96,5 +97,7 @@ Waypoints are next, in this format:
 
 If not provided in the my request assume the type of flightplan is VFR and the cruising altitude is 5000
 
-For IFR flightplans, please prompt me for a preferred route or airway. Please save the flightplan in the Little Navmap XML format.
+For IFR flightplans, please prompt me for a preferred route or airway. If none provided, select the most appropriate one. 
+
+Please save the flightplan in the Little Navmap XML format.
 
